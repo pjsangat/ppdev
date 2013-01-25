@@ -33,9 +33,9 @@
   <div class="content">
 <?php if (!is_null($task_list->getDueDate())) { ?>
 <?php if ($task_list->getDueDate()->getYear() > DateTimeValueLib::now()->getYear()) { ?>
-      <div class="dueDate"><span><?php echo lang('due date') ?>:</span> <?php echo format_date($task_list->getDueDate(), null, 0) ?></div>
+      <div class="dueDate"><span><?php echo lang('due date') ?>:</span> <?php echo format_date($task_list->getDueDate(), "Y-m-d H:i:s", 0) ?></div>
 <?php } else { ?>
-      <div class="dueDate"><span><?php echo lang('due date') ?>:</span> <?php echo format_descriptive_date($task_list->getDueDate(), 0) ?></div>
+      <div class="dueDate"><span><?php echo lang('due date') ?>:</span> <?php echo format_descriptive_date($task_list->getDueDate(), 0, "Y-m-d H:i:s") ?></div>
 <?php } // if ?>
 <?php } // if ?>
 <?php if ($task_list->getScore()>0) { ?>
@@ -60,18 +60,22 @@
           <?php echo (do_textile('[' .$task->getId() . '] ' . $task->getText())) ?>
 <?php if (!is_null($task->getStartDate())) { ?>
 <?php if ($task->getStartDate()->getYear() > DateTimeValueLib::now()->getYear()) { ?>
-      <div class="startDate"><span><?php echo lang('start date') ?>:</span> <?php echo format_date($task->getStartDate(), null, 0) ?></div>
+      <div class="startDate"><span><?php echo lang('start date') ?>:</span> <?php echo format_date($task->getStartDate(), "Y-m-d H:i:s", 0) ?></div>
 <?php } else { ?>
-      <div class="startDate"><span><?php echo lang('start date') ?>:</span> <?php echo format_descriptive_date($task->getStartDate(), 0) ?></div>
+      <div class="startDate"><span><?php echo lang('start date') ?>:</span> <?php echo format_descriptive_date($task->getStartDate(), 0, "Y-m-d H:i:s") ?></div>
 <?php } // if ?>
-<?php } // if ?>
+<?php }else{ // if ?>
+	  <div class="startDate"><span><?php echo 'Start Date: ----------'; ?></span></div>
+<?php }?>
 <?php if (!is_null($task->getDueDate())) { ?>
 <?php if ($task->getDueDate()->getYear() > DateTimeValueLib::now()->getYear()) { ?>
-      <div class="dueDate"><span><?php echo lang('due date') ?>:</span> <?php echo format_date($task->getDueDate(), null, 0) ?></div>
+      <div class="dueDate"><span><?php echo lang('due date') ?>:</span> <?php echo format_date($task->getDueDate(), "Y-m-d H:i:s", 0) ?></div>
 <?php } else { ?>
-      <div class="dueDate"><span><?php echo lang('due date') ?>:</span> <?php echo format_descriptive_date($task->getDueDate(), 0) ?></div>
+      <div class="dueDate"><span><?php echo lang('due date') ?>:</span> <?php echo format_descriptive_date($task->getDueDate(), 0, "Y-m-d H:i:s") ?></div>
 <?php } // if ?>
-<?php } // if ?>
+<?php }else{ // if ?>
+	  <div class="dueDate"><span><?php echo 'Due Date: ----------'; ?></span></div>
+<?php }?>
 <?php
   $task_options = array();
   if ($task->getAssignedTo()) { 
