@@ -85,7 +85,7 @@
       <td><?php echo label_tag(lang('start date'), null, false); ?>
        <div><?php echo pick_date_widget("task_list_task{$i}_start_date", array_var($task_list_data["task$i"], 'start_date')) ?></div>
        <?php echo label_tag(lang('due date'), null, false) ?>
-       <?php echo pick_date_widget("task_list_task{$i}_due_date", array_var($task_list_data["task$i"], 'due_date')) ?>
+       <?php echo pick_date_widget("task_list_task{$i}_due_date", array_var($task_list_data["due$i"], 'due_date')) ?>
       </td>
       <td><?php echo label_tag(lang('assign to'), null, false) ?>
         <?php echo assign_to_select_box("task_list[task$i][assigned_to]", active_project(), array_var($task_list_data["task$i"], 'assigned_to')) ?>

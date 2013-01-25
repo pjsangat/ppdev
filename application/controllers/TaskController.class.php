@@ -117,13 +117,20 @@
         $task_list_data = array(
           'milestone_id' => array_var($_GET, 'milestone_id'),
           'start_date' => DateTimeValueLib::now(),
+          'due_date' => DateTimeValueLib::makeFromString(date("Y-m-d H:i:s", strtotime("+3 days"))) ,
           'is_private' => config_option('default_private', false),
           'task0' => array( 'start_date' => DateTimeValueLib::now() ),
+          'due0' => array( 'due_date' => DateTimeValueLib::makeFromString(date("Y-m-d H:i:s", strtotime("+3 days"))) ),
           'task1' => array( 'start_date' => DateTimeValueLib::now() ),
+          'due1' => array( 'due_date' => DateTimeValueLib::makeFromString(date("Y-m-d H:i:s", strtotime("+3 days"))) ),
           'task2' => array( 'start_date' => DateTimeValueLib::now() ),
+          'due2' => array( 'due_date' => DateTimeValueLib::makeFromString(date("Y-m-d H:i:s", strtotime("+3 days"))) ),
           'task3' => array( 'start_date' => DateTimeValueLib::now() ),
+          'due3' => array( 'due_date' => DateTimeValueLib::makeFromString(date("Y-m-d H:i:s", strtotime("+3 days"))) ),
           'task4' => array( 'start_date' => DateTimeValueLib::now() ),
+          'due4' => array( 'due_date' => DateTimeValueLib::makeFromString(date("Y-m-d H:i:s", strtotime("+3 days"))) ),
           'task5' => array( 'start_date' => DateTimeValueLib::now() ),
+          'due5' => array( 'due_date' => DateTimeValueLib::makeFromString(date("Y-m-d H:i:s", strtotime("+3 days"))) ),
         ); // array
       } else {
         for ($i = 0; $i < 6; $i++) {
@@ -541,7 +548,8 @@
       $task_data = array_var($_POST, 'task');
       if (!is_array($task_data)) {
         $task_data = array(
-          'due_date' => DateTimeValueLib::now(),
+          'due_date' => DateTimeValueLib::makeFromString(date("Y-m-d H:i:s", strtotime("+3 days"))),
+          'start_date' => DateTimeValueLib::now(),
         ); // array
       } // if
      
