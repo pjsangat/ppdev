@@ -1,0 +1,24 @@
+<?php
+	if($_SERVER['HTTP_HOST']=='localhost'){
+		define('DB_ADAPTER', 'mysql'); 
+		define('DB_HOST', 'localhost'); 
+		define('DB_USER', 'root'); 
+		define('DB_PASS', ''); 
+		define('DB_NAME', 'pp'); 
+		define('DB_PREFIX', 'pp088_'); 
+		define('DB_CHARSET', 'utf8'); 
+		define('DB_PERSIST', false); 
+		return true;
+	}
+	else if($_SERVER['HTTP_HOST']=='projects.directopen.com'){
+		define('DB_ADAPTER', 'mysql'); 
+		define('DB_HOST', 'localhost'); 
+		define('DB_USER', 'root'); 
+		define('DB_PASS', 'e3i71BFGRqda3'); 
+		define('DB_NAME', 'pp'); 
+		define('DB_PREFIX', 'pp088_'); 
+		define('DB_CHARSET', 'utf8'); 
+		define('DB_PERSIST', false); 
+		return true;
+	}
+?>
